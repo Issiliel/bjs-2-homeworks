@@ -3,6 +3,8 @@ function Student(name, gender, age) {
   this.gender = gender;
   this.age = age; 
 }
+new Student('Ivan', 'male', 19);
+new Student('Oleg', 'male', 23);
 
 Student.prototype.setSubject = function (subjectName) {
   this.subject = subjectName;
