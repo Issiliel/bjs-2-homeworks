@@ -17,8 +17,8 @@ function cachingDecoratorNew(func) {
     if (cache.length > 5) {
       cache.shift();
     }
-    console.log("Вычисления: " + result);
-    return "Вычисления: " + result;
+    console.log("Вычисляем: " + result);
+    return "Вычисляем: " + result;
   }
   return wrapper;
 }
@@ -30,9 +30,9 @@ function debounceDecoratorNew(func, ms) {
   function wrapper(...args) {
     if (timer === null) {
       func(...args);
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), ms);
     }
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), ms);
   }
   return wrapper;
 }
@@ -43,9 +43,9 @@ function debounceDecorator2(func) {
   function wrapper(...args) {
     if (timer === null) {
       func(...args);
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), ms);
     }
+    clearTimeout(timer);
+    timer = setTimeout(() => func(...args), ms);
     wrapper.count++;
   }
   wrapper.count = 0;
